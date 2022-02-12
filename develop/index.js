@@ -59,11 +59,24 @@ inquirer.prompt([
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address? (Required)',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Please enter your email address.');
+                return false;
+            }
+        }
     }
     // Create a function to write README file
 ]).then(answers => {
     
-    fs.writeFile("README.md", `# ${answers.project}\n## Description\n#### ${answers.description}\n ## Installation Instructions\n #### ${answers.installation}\n ## Usage Information\n #### ${answers.usage}\n ## Contribution Guidelines\n #### ${answers.contribution}\n ## Test Instructions\n #### ${answers.test}\n ## Questions\n #### ${answers.github}\n #### https://github.com/${answers.github}`, (err) => {
+    fs.writeFile("README.md", `# ${answers.project}\n## Description\n#### ${answers.description}\n ## Installation Instructions\n #### ${answers.installation}\n ## Usage Information\n #### ${answers.usage}\n ## Contribution Guidelines\n #### ${answers.contribution}\n ## Test Instructions\n #### ${answers.test}\n ## Questions\n #### Github username: ${answers.github}\n #### https://github.com/${answers.github}\n #### If you have any additional questions, you can email me at this clickable link\n ${answers.email}\n `, (err) => {
         if(err) throw err
     });
 }).catch(err => {
