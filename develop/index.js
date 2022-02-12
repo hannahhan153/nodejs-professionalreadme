@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const markdown= require('./utils/generateMarkdown');
 
+
 // Create an array of questions for user input
 // const questions = [];
 inquirer.prompt([
@@ -48,16 +49,26 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 
+        name: 'github',
+        message: 'What is your github account name? (Required)',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter your github account.');
+                return false;
+            }
+        }
     }
     // Create a function to write README file
 ]).then(answers => {
-    fs.writeFile("README.md", `# ${answers.project}\n## Description\n#### ${answers.description}\n ## Installation Instructions\n #### ${answers.installation}\n ## Usage Information\n #### ${answers.usage}\n ## Contribution Guidelines\n #### ${answers.contribution}\n ## Test Instructions\n #### ${answers.test}\n `, (err) => {
+    
+    fs.writeFile("README.md", `# ${answers.project}\n## Description\n#### ${answers.description}\n ## Installation Instructions\n #### ${answers.installation}\n ## Usage Information\n #### ${answers.usage}\n ## Contribution Guidelines\n #### ${answers.contribution}\n ## Test Instructions\n #### ${answers.test}\n ## Questions\n #### ${answers.github}\n #### https://github.com/${answers.github}`, (err) => {
         if(err) throw err
-    })
+    });
 }).catch(err => {
     if (err) throw err
-})
+});
 
 // TODO: Create a function to initialize app
 //function init() {}
