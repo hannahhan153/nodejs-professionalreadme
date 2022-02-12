@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-professionalreadme",
+  "version": "1.0.0",
+  "description": "node js professional readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannahhan153/nodejs-professionalreadme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannahhan153/nodejs-professionalreadme/issues"
+  },
+  "homepage": "https://github.com/hannahhan153/nodejs-professionalreadme#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
