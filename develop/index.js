@@ -132,7 +132,7 @@ inquirer.prompt([
             break;
     }
 
-    fs.writeFile("README.md", ` # ${answers.project}\n### Description\n ${license}\n #### ${answers.description}\n### Installation Instructions\n#### ${answers.installation}\n### Usage Information\n#### ${answers.usage}\n### Contribution Guidelines\n#### ${answers.contribution}\n### Test Instructions\n#### ${answers.test}\n### License\n ${answers.license}\n### Questions\n#### Github username: ${answers.github}\n#### https://github.com/${answers.github}\n#### If you have any additional questions, you can email me at this clickable link\n ${answers.email}\n `, (err) => {
+    fs.writeFile("README.md", ` # ${answers.project}\n ${license}\n### Description\n #### ${answers.description}\n###Table of Contents### Installation Instructions\n#### ${answers.installation}\n### Usage Information\n#### ${answers.usage}\n### Contribution Guidelines\n#### ${answers.contribution}\n### Test Instructions\n#### ${answers.test}\n### License\n ${answers.license}\n### Questions\n#### Github username: ${answers.github}\n#### https://github.com/${answers.github}\n#### If you have any additional questions, you can email me at this clickable link\n ${answers.email}\n `, (err) => {
         if(err) throw err
     });
 }).catch(err => {
