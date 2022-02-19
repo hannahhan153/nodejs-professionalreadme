@@ -28,6 +28,9 @@ THEN this is added to the section of the README entitled Questions, with instruc
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 ```
+## Screenshots of Sample README file
+![FirstScreenshot](images/Screen%20Shot%202022-02-19%20at%2010.40.17%20AM.png)
+![SecondScreenshot](images/Screen%20Shot%202022-02-19%20at%2010.43.10%20AM.png)
 
 ## Link to Walkthrough Video 
 https://watch.screencastify.com/v/WfBNEd8dkeYjbylN4GCp 
