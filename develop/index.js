@@ -132,15 +132,10 @@ inquirer.prompt([
             break;
     }
 
-    fs.writeFile("README.md", ` # ${answers.project}\n ${license}\n### Description\n #### ${answers.description}\n###Table of Contents### Installation Instructions\n#### ${answers.installation}\n### Usage Information\n#### ${answers.usage}\n### Contribution Guidelines\n#### ${answers.contribution}\n### Test Instructions\n#### ${answers.test}\n### License\n ${answers.license}\n### Questions\n#### Github username: ${answers.github}\n#### https://github.com/${answers.github}\n#### If you have any additional questions, you can email me at this clickable link\n ${answers.email}\n `, (err) => {
+    fs.writeFile("README.md", ` # ${answers.project}\n ${license}\n### Description\n #### ${answers.description}\n### Table of Contents\n [Description](#description)\n [Installation](#installation-instructions)\n [Usage](#usage-information)\n [Contribution](#contribution-guidelines)\n [Test](#test-instructions)\n [License](#license)\n [Questions](#questions)\n ### Installation Instructions\n#### ${answers.installation}\n### Usage Information\n#### ${answers.usage}\n### Contribution Guidelines\n#### ${answers.contribution}\n### Test Instructions\n#### ${answers.test}\n### License\n ${answers.license}\n### Questions\n#### Github username: ${answers.github}\n#### https://github.com/${answers.github}\n#### If you have any additional questions, you can email me at this clickable link\n ${answers.email}\n `, (err) => {
         if(err) throw err
     });
 }).catch(err => {
     if (err) throw err
 });
 
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();
